@@ -24,14 +24,14 @@
 
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
     <script>
-      if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-      }
-    </script>
+    if (window.location.search.match(/print-pdf/gi)) {
+	var link = document.createElement("link");
+	link.rel = "stylesheet";
+	link.type = "text/css";
+	link.href = "css/print/pdf.css";
+	document.getElementsByTagName("head")[0].appendChild(link);
+}
+</script>
 
     <!-- If use the PDF print sheet so students can print slides-->
 
@@ -422,7 +422,7 @@
 </code></pre>
             <p>Selects all elements with an id of "footer".</p>
 
-<pre><code class="html">&lt;p id="footer"&gt;Copyright 2017&lt;/p&gt;
+<pre><code class="html">&lt;p id="footer"&gt;Copyright 2018&lt;/p&gt;
 </code></pre>
             <p>The associated HTML.</p>
           </section>
@@ -545,30 +545,58 @@ a { /*This rule wins*/
     <script src="js/reveal.min.js"></script>
 
     <script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
 
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+	transition: "slide", // none/fade/slide/convex/concave/zoom
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]
-      });
-
-    </script>
+	// Optional reveal.js plugins
+	dependencies: [
+		{
+			src: "lib/js/classList.js",
+			condition: function() {
+				return !document.body.classList;
+			}
+		},
+		{
+			src: "plugin/markdown/marked.js",
+			condition: function() {
+				return !!document.querySelector("[data-markdown]");
+			}
+		},
+		{
+			src: "plugin/markdown/markdown.js",
+			condition: function() {
+				return !!document.querySelector("[data-markdown]");
+			}
+		},
+		{
+			src: "plugin/highlight/highlight.js",
+			async: true,
+			condition: function() {
+				return !!document.querySelector("pre code");
+			},
+			callback: function() {
+				hljs.initHighlightingOnLoad();
+			}
+		},
+		{ src: "plugin/zoom-js/zoom.js", async: true },
+		{ src: "plugin/notes/notes.js", async: true },
+		{
+			src: "plugin/accessibility-helper/js/accessibility-helper.js",
+			async: true,
+			condition: function() {
+				return !!document.body.classList;
+			}
+		}
+	]
+});
+</script>
 
   </body>
 </html>
